@@ -459,6 +459,9 @@
             <listEntry value="57">@Strings.settings_next_calendar_event</listEntry>
             <listEntry value="71">@Strings.settings_cgm_glucose_trend</listEntry>
             <listEntry value="72">@Strings.settings_cgm_age</listEntry>
+            <listEntry value="79">@Strings.settings_stonks_portfolio_value</listEntry>
+            <listEntry value="80">@Strings.settings_stonks_daily_pl</listEntry>
+            <listEntry value="81">@Strings.settings_stonks_daily_pl_pct</listEntry>
         </settingConfig>
     </setting>
 
@@ -517,6 +520,9 @@
             <listEntry value="57">@Strings.settings_next_calendar_event</listEntry>
             <listEntry value="71">@Strings.settings_cgm_glucose_trend</listEntry>
             <listEntry value="72">@Strings.settings_cgm_age</listEntry>
+            <listEntry value="79">@Strings.settings_stonks_portfolio_value</listEntry>
+            <listEntry value="80">@Strings.settings_stonks_daily_pl</listEntry>
+            <listEntry value="81">@Strings.settings_stonks_daily_pl_pct</listEntry>
         </settingConfig>
     </setting>
 
@@ -575,6 +581,9 @@
             <listEntry value="57">@Strings.settings_next_calendar_event</listEntry>
             <listEntry value="71">@Strings.settings_cgm_glucose_trend</listEntry>
             <listEntry value="72">@Strings.settings_cgm_age</listEntry>
+            <listEntry value="79">@Strings.settings_stonks_portfolio_value</listEntry>
+            <listEntry value="80">@Strings.settings_stonks_daily_pl</listEntry>
+            <listEntry value="81">@Strings.settings_stonks_daily_pl_pct</listEntry>
         </settingConfig>
     </setting>
 
@@ -633,6 +642,9 @@
             <listEntry value="57">@Strings.settings_next_calendar_event</listEntry>
             <listEntry value="71">@Strings.settings_cgm_glucose_trend</listEntry>
             <listEntry value="72">@Strings.settings_cgm_age</listEntry>
+            <listEntry value="79">@Strings.settings_stonks_portfolio_value</listEntry>
+            <listEntry value="80">@Strings.settings_stonks_daily_pl</listEntry>
+            <listEntry value="81">@Strings.settings_stonks_daily_pl_pct</listEntry>
         </settingConfig>
     </setting>
 
@@ -1211,5 +1223,38 @@
                 <listEntry value="2">@Strings.settings_hide_top_labels</listEntry>
                 <listEntry value="3">@Strings.settings_hide_bottom_labels</listEntry>
             </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.t212Account" title="@Strings.settings_t212_account">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.settings_t212_demo</listEntry>
+            <listEntry value="1">@Strings.settings_t212_live</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.t212ClientId" title="@Strings.settings_t212_client_id">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+
+    <setting propertyKey="@Properties.t212SecretKey" title="@Strings.settings_t212_secret_key">
+        <settingConfig type="alphaNumeric" />
+    </setting>
+
+    <setting propertyKey="@Properties.stonksTtl" title="@Strings.settings_stonks_ttl">
+        <settingConfig type="list">
+            <listEntry value="5">@Strings.settings_stonks_5_min</listEntry>
+            <listEntry value="10">@Strings.settings_stonks_10_min</listEntry>
+            <listEntry value="15">@Strings.settings_stonks_15_min</listEntry>
+            <listEntry value="30">@Strings.settings_stonks_30_min</listEntry>
+            <listEntry value="60">@Strings.settings_stonks_60_min</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.stonksMarket" title="@Strings.settings_stonks_market">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.settings_stonks_market_us</listEntry>
+            <listEntry value="1">@Strings.settings_stonks_market_eu</listEntry>
+            <listEntry value="2">@Strings.settings_stonks_market_always</listEntry>
+        </settingConfig>
     </setting>
 </settings>

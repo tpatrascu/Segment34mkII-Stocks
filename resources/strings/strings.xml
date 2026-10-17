@@ -1,5 +1,5 @@
 <strings>
-    <string id="AppName">Segment34 MkII</string>
+    <string id="AppName">Segment34 MkII Stocks</string>
 
     <string id="UNIT_KCAL">KCAL</string>
     <string id="UNIT_M">M</string>
@@ -196,6 +196,12 @@
     <string id="LABEL_FL_3">FEELS LIKE</string>
     <string id="LABEL_CGM">CGM</string>
     <string id="LABEL_CGMAGE">CGM AGE</string>
+    <string id="LABEL_PORT">PORT</string>
+    <string id="LABEL_PORTFOLIO">PORTFOLIO</string>
+    <string id="LABEL_PL">P/L</string>
+    <string id="LABEL_DAYPL">DAY P/L</string>
+    <string id="LABEL_PLPCT">P/L %</string>
+    <string id="LABEL_DAYPLPCT">DAY P/L %</string>
     <string id="LABEL_HRS_NEXT_SUN_EVENT_1">H SUN</string>
     <string id="LABEL_HRS_NEXT_SUN_EVENT_3">HRS SUN</string>
     <string id="LABEL_RHR_1">RHR</string>
@@ -488,4 +494,22 @@
     <string id="settings_temperature_uv_wind" scope="settings">Temperature, UV Index, Wind</string>
     <string id="settings_cgm_glucose_trend" scope="settings">CGM Glucose + Trend</string>
     <string id="settings_cgm_age" scope="settings">CGM Age (minutes)</string>
+    <string id="settings_stonks_portfolio_value" scope="settings">Trading212 Portfolio value (cash + positions)</string>
+    <string id="settings_stonks_daily_pl" scope="settings">Trading212 Daily P/L (money)</string>
+    <string id="settings_stonks_daily_pl_pct" scope="settings">Trading212 Daily P/L (percent)</string>
+    <string id="settings_t212_account" scope="settings">Trading212 account:</string>
+    <string id="settings_t212_demo" scope="settings">Demo (paper trading)</string>
+    <string id="settings_t212_live" scope="settings">Live</string>
+    <string id="settings_t212_client_id" scope="settings">Trading212 API key (client id):</string>
+    <string id="settings_t212_secret_key" scope="settings">Trading212 API secret key:</string>
+    <string id="settings_stonks_ttl" scope="settings">Trading212 update interval (cache TTL):</string>
+    <string id="settings_stonks_5_min" scope="settings">5 minutes</string>
+    <string id="settings_stonks_10_min" scope="settings">10 minutes</string>
+    <string id="settings_stonks_15_min" scope="settings">15 minutes</string>
+    <string id="settings_stonks_30_min" scope="settings">30 minutes</string>
+    <string id="settings_stonks_60_min" scope="settings">60 minutes</string>
+    <string id="settings_stonks_market" scope="settings">Only update while the market is open:</string>
+    <string id="settings_stonks_market_us" scope="settings">US (09:30-16:00 New York)</string>
+    <string id="settings_stonks_market_eu" scope="settings">EU (09:00-17:30 Central Europe)</string>
+    <string id="settings_stonks_market_always" scope="settings">Always</string>
 </strings>

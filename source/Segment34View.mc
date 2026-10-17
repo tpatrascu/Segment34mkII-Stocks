@@ -85,6 +85,7 @@ class Segment34View extends WatchUi.WatchFace {
     hidden var cachedRunDist7Days as Number = 0;
     hidden var cachedBikeDist7Days as Number = 0;
     hidden var lastActivityDistUpdate as Number = 0;
+    hidden var stonksCache as Array? = null;
 
     (:WeatherCache) hidden var lastHfTime as Number? = null;
     (:WeatherCache) hidden var lastCcHash as Number? = null;
@@ -221,7 +222,17 @@ class Segment34View extends WatchUi.WatchFace {
         marginX = Math.round(screenWidth / 20);
         hasComplications = Toybox has :Complications;
 
+        var cached = Application.Storage.getValue(StonksData.CACHE_KEY);
+        if(cached instanceof Array and cached.size() == StonksData.CACHE_SIZE) { stonksCache = cached; }
+
         reloadSettings();
+    }
+
+    function onStonksData(cache as Array) as Void {
+        stonksCache = cache;
+        updateActiveLabels();
+        lastUpdate = null;
+        WatchUi.requestUpdate();
     }
 
     hidden function reloadSettings() as Void {
@@ -2456,6 +2467,8 @@ class Segment34View extends WatchUi.WatchFace {
             }
             var distFactor = propIsMetricDistance ? 0.001 : 0.000621371;
             val = formatDistanceByWidth((complicationType == 77 ? cachedRunDist7Days : cachedBikeDist7Days) * distFactor, width);
+        } else if(StonksFormat.isStonksType(complicationType)) { // Trading212 portfolio value / daily P/L
+            val = StonksFormat.getValue(complicationType, width, stonksCache);
         }
 
         return val;
@@ -2541,6 +2554,7 @@ class Segment34View extends WatchUi.WatchFace {
         // labelSize 1 = short, 2 = mid, 3 = long
         if(complicationType == 16) { return propTzName1.toUpper() + ":"; }
         if(complicationType == 41) { return propTzName2.toUpper() + ":"; }
+        if(StonksFormat.isStonksType(complicationType)) { return StonksFormat.getLabel(complicationType, labelSize, stonksCache); }
         switch(complicationType) {
             case 0: return formatLabel(Rez.Strings.LABEL_WMIN_1, Rez.Strings.LABEL_WMIN_2, Rez.Strings.LABEL_WMIN_3, labelSize);
             case 1: return formatLabel(Rez.Strings.LABEL_DMIN_1, Rez.Strings.LABEL_DMIN_2, Rez.Strings.LABEL_DMIN_3, labelSize);
@@ -2617,6 +2631,7 @@ class Segment34View extends WatchUi.WatchFace {
         // Low-mem version: formatLabel only takes short + mid (no long/_3 resources)
         if(complicationType == 16) { return propTzName1.toUpper() + ":"; }
         if(complicationType == 41) { return propTzName2.toUpper() + ":"; }
+        if(StonksFormat.isStonksType(complicationType)) { return StonksFormat.getLabel(complicationType, labelSize, stonksCache); }
         switch(complicationType) {
             case 0: return formatLabel(Rez.Strings.LABEL_WMIN_1, Rez.Strings.LABEL_WMIN_2, labelSize);
             case 1: return formatLabel(Rez.Strings.LABEL_DMIN_1, Rez.Strings.LABEL_DMIN_2, labelSize);

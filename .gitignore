@@ -4,3 +4,5 @@ bin
 .vscode
 build_devices.sh
 release
+developer_key
+build

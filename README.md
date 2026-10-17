@@ -1,4 +1,4 @@
-# Segment34 MkII
+# Segment34 MkII Stocks
 A watchface for Garmin watches with a 34 Segment display
 
 ![Screenshot of the watchface](screenshot.png "Screenshot")
@@ -17,6 +17,22 @@ The watchface features the following:
 - Battery days remaining (or percentage on some watches)
 - Always on mode
 - Settings in the Garmin app
+- Trading212 portfolio value and daily P/L (see below)
+
+## Trading212 portfolio fields
+Three values can be selected for any of the four bottom fields in the settings:
+- Portfolio value (cash + positions) in the account currency
+- Daily P/L in the account currency, signed, 1 decimal (e.g. `+123.4`)
+- Daily P/L in percent, unsigned, 1 decimal (e.g. `1.2`, the label shows the %)
+
+The daily P/L is the change since the previous close of every position (prices from Yahoo Finance). Values that do not fit in the field are shortened (`+1.2K`, `+1K`).
+
+Settings: Trading212 account (demo/live), API key and API secret (create them in the Trading212 app, the key needs the account and portfolio scopes), update interval (cache TTL, 5-60 minutes) and the market hours to update in (US/EU/Always).
+
+How it works:
+- A background process fetches the data every TTL minutes (Garmin does not allow less than 5), and only while the selected market is open. The result is cached and never deleted, the watchface always shows the latest cached value (`---` until the first update).
+- Trading212 tickers are mapped to Yahoo symbols (`AAPL_US_EQ` -> `AAPL`, `VODl_EQ` -> `VOD.L`, `SAPd_EQ` -> `SAP.DE`, also `a` `p` `e` `m` `s` exchanges). Positions that Yahoo does not know count as unchanged.
+- The Trading212 positions response is parsed in the watch's background process (32-64 KB), a portfolio with very many positions may not fit. In that case only the portfolio value is updated.
 
 
 ## Frequently Asked Questions

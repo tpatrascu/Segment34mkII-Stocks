@@ -1,0 +1,11 @@
+Add some helper functions to grab data from Trading212 API and yahoo finance and calculate:
+- Total Portfolio Value from account (cash + positions) in account base currency
+- Daily P/L from previous day Close price in signed money format 1 decimal place account base currency 
+- Daily P/L from previous day Close price in format 1 decimal place unsigned percent
+
+Also the following functionality:
+- cache the result with a TTL of 5 min by default, never delete the cache, always have previous cached value to display, add setting to control TTL
+- only update during the time interval that market is open, add setting for selecting market open interval US/EU/Always
+- select Tradins212 demo or live account, add setting for this
+- Add setting for Trading212 API client id and secret key
+- Add fields to watchface to display the calculated values in the 4 "Bottom Fields"
