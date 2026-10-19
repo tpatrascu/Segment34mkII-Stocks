@@ -1,6 +1,7 @@
 Segment34 MkII + Stock portfolio monitoring
 
 Notice: Only tested on Fenix 8 47mm, might not work or display poorly on other watches
+Tip: Create a Trading212 demo account and aggregate all your positions from other brokers on it to calculate the total
 
 Setup
 - Enable API access in Trading212 with Allow Account and Portfolio scopes
@@ -13,7 +14,7 @@ Three values can be selected for any of the four bottom fields in the settings:
 - Daily P/L in the account currency, signed, 1 decimal (e.g. `+123.4`)
 - Daily P/L in percent, unsigned, 1 decimal (e.g. `1.2`, the label shows the %)
 
-The daily P/L is the change since the previous close of every position (prices from Yahoo Finance). Values that do not fit in the field are shortened (`+1.2K`, `+1K`).
+The daily P/L is the change since the previous close of every position (prices from Yahoo Finance). Values that do not fit in the field are shortened by dividing by 1,000 or 1,000,000 until they fit.
 
 Settings: Trading212 account (demo/live), API key and API secret (create them in the Trading212 app, the key needs the account and portfolio scopes), update interval (cache TTL, 5-60 minutes) and the market hours to update in (US/EU/Always).
 

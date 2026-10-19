@@ -65,7 +65,8 @@ module StonksFormat {
             str = str.substring(1, str.length());
         }
         var sign = (rounded < 0.0) ? "-" : (signed ? "+" : "");
-        return sign + str + SUFFIXES[step];
+        //return sign + str + SUFFIXES[step];
+        return sign + str;
     }
 
     // Unsigned percent with 1 decimal and no percent sign (the label shows it), e.g. 1.2
