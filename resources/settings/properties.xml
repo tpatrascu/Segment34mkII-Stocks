@@ -59,11 +59,12 @@
     <property id="pressToOpenBottomLeft" type="number">0</property>
     <property id="pressToOpenBottomCenter" type="number">0</property>
     <property id="pressToOpenBottomRight" type="number">0</property>
-    <property id="labelVisibility" type="number">1</property>
+    <property id="labelVisibility" type="number">0</property>
     <property id="stressDynamicColor" type="boolean">true</property>
     <property id="t212Account" type="number">0</property>
     <property id="t212ClientId" type="string"></property>
     <property id="t212SecretKey" type="string"></property>
     <property id="stonksTtl" type="number">5</property>
     <property id="stonksMarket" type="number">1</property>
+    <property id="calcPl" type="number">1</property>
 </properties>

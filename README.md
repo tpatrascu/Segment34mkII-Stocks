@@ -27,7 +27,11 @@ Three values can be selected for any of the four bottom fields in the settings:
 
 The daily P/L is the change since the previous close of every position (prices from Yahoo Finance). Values that do not fit in the field are shortened by dividing by 1,000 or 1,000,000 until they fit.
 
-Settings: Trading212 account (demo/live), API key and API secret (create them in the Trading212 app, the key needs the account and portfolio scopes), update interval (cache TTL, 5-60 minutes) and the market hours to update in (US/EU/Always).
+Settings:
+- Trading212 account (demo/live)
+- API key and API secret (create them in the Trading212 app, the key needs the account and portfolio scopes)
+- Update interval (cache TTL, 5-60 minutes), the market hours to update in (US/EU/Always)
+- Calculate the daily P/L (Enable/Disable, default Enable). When disabled, Yahoo Finance API is not used and the daily P/L fields show `---`.
 
 How it works:
 - A background process fetches the data every TTL minutes (Garmin does not allow less than 5), and only while the selected market is open. The result is cached and never deleted, the watchface always shows the latest cached value (`---` until the first update).
@@ -74,6 +78,9 @@ For refactorings and optimizations keep in mind that:
 - Second custom theme for easy switching
 
 ## Change log
+2026-10-21 v4.7.0
+- New setting "Calculate daily P/L" (Enable/Disable, default Enable); when disabled Yahoo Finance is not contacted and the daily P/L fields show `---`
+
 2026-03-20 v4.6.2
 - Changed default for AM/PM
 

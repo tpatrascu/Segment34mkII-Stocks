@@ -512,4 +512,7 @@
     <string id="settings_stonks_market_us" scope="settings">US (09:30-16:00 New York)</string>
     <string id="settings_stonks_market_eu" scope="settings">EU (09:00-17:30 Central Europe)</string>
     <string id="settings_stonks_market_always" scope="settings">Always</string>
+    <string id="settings_stonks_calc_pl" scope="settings">Calculate daily P/L:</string>
+    <string id="settings_stonks_calc_pl_enable" scope="settings">Enable</string>
+    <string id="settings_stonks_calc_pl_disable" scope="settings">Disable</string>
 </strings>

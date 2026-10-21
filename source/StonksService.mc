@@ -23,6 +23,7 @@ class StonksServiceDelegate extends System.ServiceDelegate {
     hidden var mNext as Number = 0;
     hidden var mPl as Float = 0.0;
     hidden var mPlOk as Boolean = true;
+    hidden var mCalcPl as Boolean = true;
 
     function initialize() {
         ServiceDelegate.initialize();
@@ -37,6 +38,7 @@ class StonksServiceDelegate extends System.ServiceDelegate {
             Background.exit([]);
             return;
         }
+        mCalcPl = (p.getValue("calcPl") as Number) == 1;
 
         mAuth = {"Authorization" => "Basic " + StringUtil.encodeBase64(key + ":" + secret)};
         mBaseUrl = ((p.getValue("t212Account") as Number) == 1 ? "https://live" : "https://demo") + ".trading212.com/api/v0/equity/";
@@ -58,6 +60,10 @@ class StonksServiceDelegate extends System.ServiceDelegate {
         }
         mTotal = (data["totalValue"] as Number or Float).toFloat();
         mCurrency = data["currency"] as String;
+        if(!mCalcPl) {
+            finish(false);
+            return;
+        }
         request(mBaseUrl + "positions", mAuth, method(:onPositions));
     }
 

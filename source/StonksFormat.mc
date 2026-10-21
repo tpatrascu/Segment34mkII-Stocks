@@ -23,6 +23,7 @@ module StonksFormat {
         if(type == TYPE_VALUE) {
             return fit(cache[StonksData.C_TOTAL] as Float, width, false, 1);
         }
+        if((Application.Properties.getValue("calcPl") as Number) != 1) { return NO_DATA; }
         if(cache[StonksData.C_PL] == null) { return NO_DATA; }
         if(type == TYPE_PL) {
             return fit(cache[StonksData.C_PL] as Float, width, true, 0);

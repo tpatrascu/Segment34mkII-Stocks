@@ -1257,4 +1257,11 @@
             <listEntry value="2">@Strings.settings_stonks_market_always</listEntry>
         </settingConfig>
     </setting>
+
+    <setting propertyKey="@Properties.calcPl" title="@Strings.settings_stonks_calc_pl">
+        <settingConfig type="list">
+            <listEntry value="1">@Strings.settings_stonks_calc_pl_enable</listEntry>
+            <listEntry value="0">@Strings.settings_stonks_calc_pl_disable</listEntry>
+        </settingConfig>
+    </setting>
 </settings>
