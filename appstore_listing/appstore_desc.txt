@@ -1,12 +1,12 @@
-Segment34 MkII + Stock portfolio monitoring
+Segment34 MkII + Stocks Portfolio Monitoring
 
-Trading212 portfolio fields
+Trading212 Portfolio fields
 
 Create a Trading212 demo account and aggregate all your positions from other brokers on it to calculate the total
 
 Three values can be selected for any of the four bottom fields in the settings:
 - Portfolio value (cash + positions) in the account currency
-- Daily P/L in the account currency, signed, 1 decimal (e.g. `+123.4`)
+- Daily P/L in the account currency, signed, 1 decimal (e.g. `+13.4`)
 - Daily P/L in percent, unsigned, 1 decimal (e.g. `1.2`, the label shows the %)
 
 The daily P/L is the change since the previous close of every position (prices from Yahoo Finance).
